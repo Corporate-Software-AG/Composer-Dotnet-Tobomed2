@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_Tobomed2Dotnet",
+  "recognizers": {
+    "en-us": "Tobomed2Dotnet.en-us.lu",
+    "": "Tobomed2Dotnet.en-us.lu"
+  }
+}
