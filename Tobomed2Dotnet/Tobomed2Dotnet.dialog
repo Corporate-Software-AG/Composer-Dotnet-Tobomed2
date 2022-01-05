@@ -145,6 +145,36 @@
           "activity": "${SendActivity_DidNotUnderstand()}"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "a0qNPR",
+        "name": "EchoSkill"
+      },
+      "intent": "EchoSkill",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "XplFby"
+          },
+          "activity": "${SendActivity_XplFby()}"
+        },
+        {
+          "$kind": "Microsoft.BeginSkill",
+          "$designer": {
+            "id": "BpAKxk"
+          },
+          "activityProcessed": true,
+          "botId": "=settings.MicrosoftAppId",
+          "skillHostEndpoint": "=settings.skillHostEndpoint",
+          "connectionName": "=settings.connectionName",
+          "allowInterruptions": false,
+          "skillEndpoint": "=settings.skill['jsEchoSkill'].endpointUrl",
+          "skillAppId": "=settings.skill['jsEchoSkill'].msAppId"
+        }
+      ]
     }
   ],
   "generator": "Tobomed2Dotnet.lg",

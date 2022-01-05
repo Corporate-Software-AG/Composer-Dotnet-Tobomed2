@@ -1,0 +1,27 @@
+{
+  "profileName": "Tobomed2",
+  "jobId": "57aead2c-54c1-4427-b670-d8e1c508e88a",
+  "projectId": "53125.116313341",
+  "time": "2022-01-04T09:33:55.184Z",
+  "log": [
+    "Creating Azure resources...",
+    "Checking the Existence of the Resource Group ...",
+    "Use the Resource Group: RG-TOBOMED2 at switzerlandnorth",
+    "> Creating App Registration ...",
+    "Start to add password for App, Id : 705c3a62-6baf-4570-a459-5b836b44b945",
+    "> Create App Registration Success! ID: 705c3a62-6baf-4570-a459-5b836b44b945",
+    "Deploying Web App Resource ...",
+    "Deploying Bot Resource ...",
+    "Deploying Luis Authoring Resource ...",
+    "Deploying Luis Resource ...",
+    "Deploying Cosmos DB Resource ...",
+    "Deploying Application Insights Resource ...",
+    "> Linking Application Insights settings to Bot Service ...",
+    "> AppInsights AppId: 37bd9e82-7050-4c46-bcd2-3241f9c35536 ...",
+    "> AppInsights InstrumentationKey: 65108e47-82ae-4d9a-a259-d7cd71c41613 ...",
+    "> AppInsights ApiKey: b5g7rsau1zutv8sawww4e8kdx1l4j0tjdb7dstrk ...",
+    "> Linking Application Insights settings to Bot Service Success!",
+    "Deploying Blob Storage Resource ...",
+    "Provisioning completed successfully!"
+  ]
+}

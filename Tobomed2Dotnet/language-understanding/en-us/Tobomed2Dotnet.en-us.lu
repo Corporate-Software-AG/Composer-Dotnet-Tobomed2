@@ -26,3 +26,15 @@
 - check my account balance
 - do unicorns really exist
 - duck
+
+# EchoSkill
+> add some example phrases to trigger this intent:
+> - please tell me the weather
+> - what is the weather like in {city=Seattle}
+
+> entity definitions:
+> @ ml city
+- start echoskill
+- echo st back to me
+- can you echoing?
+- i want, that you repeat something
