@@ -164,15 +164,15 @@
         {
           "$kind": "Microsoft.BeginSkill",
           "$designer": {
-            "id": "BpAKxk"
+            "id": "pxCV08"
           },
           "activityProcessed": true,
           "botId": "=settings.MicrosoftAppId",
           "skillHostEndpoint": "=settings.skillHostEndpoint",
           "connectionName": "=settings.connectionName",
           "allowInterruptions": false,
-          "skillEndpoint": "=settings.skill['jsEchoSkill'].endpointUrl",
-          "skillAppId": "=settings.skill['jsEchoSkill'].msAppId"
+          "skillEndpoint": "=settings.skill['echoSkillBot'].endpointUrl",
+          "skillAppId": "=settings.skill['echoSkillBot'].msAppId"
         }
       ]
     }

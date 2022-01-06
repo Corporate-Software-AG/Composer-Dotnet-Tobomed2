@@ -2,8 +2,8 @@
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/main/Composer/packages/server/schemas/botproject.schema",
   "name": "Tobomed2Dotnet",
   "skills": {
-    "jsEchoSkill": {
-      "manifest": "https://raw.githubusercontent.com/tvonment/nodejs-echoskill/main/manifest/js-echoskill-manifest-1.0.json",
+    "echoSkillBot": {
+      "manifest": "https://raw.githubusercontent.com/tvonment/nodejs-echoskill/main/manifest/js-echoskill-manifest-2.0.json",
       "remote": true,
       "endpointName": "PROD"
     }
