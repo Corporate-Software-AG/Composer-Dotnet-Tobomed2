@@ -1,0 +1,108 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "KItXh9",
+    "name": "ImageProcessing",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "EnAVC2"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "BLUsO1"
+          },
+          "resultProperty": "dialog.api_response",
+          "method": "POST",
+          "url": "https://tobomed2-computervision.cognitiveservices.azure.com/vision/v2.1/analyze?visualFeatures=Description,Tags",
+          "body": {
+            "url": "${turn.imgUrl}"
+          },
+          "contentType": "application/json",
+          "responseType": "json",
+          "headers": {
+            "Ocp-Apim-Subscription-Key": "f5276a18defd4338a1c8ff1b96d0b159"
+          }
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "BJqO4M"
+          },
+          "condition": "=dialog.api_response.statusCode == 200",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "pLTZNp"
+              },
+              "activity": "${SendActivity_pLTZNp()}"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "0GcVxZ"
+              },
+              "property": "dialog.imageTags",
+              "value": []
+            },
+            {
+              "$kind": "Microsoft.Foreach",
+              "$designer": {
+                "id": "CtMVY8"
+              },
+              "index": "dialog.foreach.index",
+              "value": "dialog.foreach.value",
+              "itemsProperty": "dialog.api_response.content.tags",
+              "actions": [
+                {
+                  "$kind": "Microsoft.EditArray",
+                  "$designer": {
+                    "id": "mcyVbv"
+                  },
+                  "changeType": "push",
+                  "itemsProperty": "dialog.imageTags",
+                  "value": "=dialog.foreach.value.name"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "u8g7lN"
+              },
+              "activity": "${SendActivity_u8g7lN()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "1KsqFx"
+              },
+              "activity": "${SendActivity_1KsqFx()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "SlI3Nv"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "ImageProcessing.lg",
+  "recognizer": "ImageProcessing.lu.qna",
+  "id": "ImageProcessing"
+}

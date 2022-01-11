@@ -18,3 +18,25 @@
 # SendActivity_XplFby_text()
 - forward to remote skill
 - i will forward you to the skill
+# LogAction_Text_IqGB2q()
+[Activity
+    Text = ${LogAction_Text_IqGB2q_text()}
+]
+
+# LogAction_Text_IqGB2q_text()
+- ${dialog}
+# SendActivity_LosZNT()
+[Activity
+    Text = ${SendActivity_LosZNT_text()}
+]
+
+# SendActivity_LosZNT_text()
+- this functionality is only in teams availible
+- please use teams to use this feature
+# SendActivity_JMsalU()
+[Activity
+    Text = ${SendActivity_JMsalU_text()}
+]
+
+# SendActivity_JMsalU_text()
+- ContentType: ${dialog.foreach.value.contentType}

@@ -1,0 +1,23 @@
+[import](common.lg)
+
+# SendActivity_1KsqFx()
+[Activity
+    Text = ${SendActivity_1KsqFx_text()}
+]
+
+# SendActivity_1KsqFx_text()
+- image processing failed
+# SendActivity_pLTZNp()
+[Activity
+    Text = ${SendActivity_pLTZNp_text()}
+]
+
+# SendActivity_pLTZNp_text()
+- ${dialog.api_response.content.description.captions[0].text}
+# SendActivity_u8g7lN()
+[Activity
+    Text = ${SendActivity_u8g7lN_text()}
+]
+
+# SendActivity_u8g7lN_text()
+- Tags: ${dialog.imageTags}

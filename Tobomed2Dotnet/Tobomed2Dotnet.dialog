@@ -137,12 +137,31 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.BeginDialog",
+          "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "xjTNeT"
+            "id": "jTatg9"
           },
-          "activityProcessed": true,
-          "dialog": "QnADialog"
+          "condition": "=empty(turn.activity.attachments)",
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "PZCjE4"
+              },
+              "activityProcessed": true,
+              "dialog": "QnADialog"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.EmitEvent",
+              "$designer": {
+                "id": "Xvxk43"
+              },
+              "handledProperty": "turn.eventHandled",
+              "eventName": "AttachementRecognized"
+            }
+          ]
         }
       ]
     },
@@ -176,6 +195,97 @@
         }
       ],
       "entities": []
+    },
+    {
+      "$kind": "Microsoft.OnDialogEvent",
+      "$designer": {
+        "id": "bSpNSS",
+        "name": "AttachementRecognized"
+      },
+      "event": "AttachementRecognized",
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "Jx1fJn"
+          },
+          "condition": "=turn.activity.channelId == \"msteams\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.Foreach",
+              "$designer": {
+                "id": "ZYXmVo"
+              },
+              "itemsProperty": "turn.activity.attachments",
+              "value": "dialog.foreach.value",
+              "index": "dialog.foreach.index",
+              "actions": [
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "N5RY8P"
+                  },
+                  "condition": "=dialog.foreach.value.contentType == \"application/vnd.microsoft.teams.file.download.info\"",
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "JMsalU"
+                      },
+                      "activity": "${SendActivity_JMsalU()}"
+                    },
+                    {
+                      "$kind": "Microsoft.ContinueLoop",
+                      "$designer": {
+                        "id": "j1OlgT"
+                      }
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "JnY1sp"
+                      },
+                      "property": "turn.imgUrl",
+                      "value": "=dialog.foreach.value.content.downloadUrl"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "W7Ubyt"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "ImageProcessing"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "LosZNT"
+              },
+              "activity": "${SendActivity_LosZNT()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "Lz3p8k"
+              }
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "ipgP5L"
+          }
+        }
+      ]
     }
   ],
   "generator": "Tobomed2Dotnet.lg",
