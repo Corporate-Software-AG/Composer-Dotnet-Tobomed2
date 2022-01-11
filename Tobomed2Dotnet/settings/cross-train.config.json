@@ -3,7 +3,8 @@
     "rootDialog": true,
     "triggers": {
       "": [
-        "WelcomeDialog.en-us"
+        "WelcomeDialog.en-us",
+        "QnADialog.en-us"
       ],
       "Cancel": [
         "CancelDialog.en-us"

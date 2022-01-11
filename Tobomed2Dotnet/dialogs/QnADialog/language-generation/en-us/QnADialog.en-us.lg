@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# SendActivity_8IHhQB()
+[Activity
+    Text = ${SendActivity_8IHhQB_text()}
+]
+
+# SendActivity_8IHhQB_text()
+- QnA call failed :(
+# SendActivity_8xiD6w()
+[Activity
+    Text = ${SendActivity_8xiD6w_text()}
+]
+
+# SendActivity_8xiD6w_text()
+- ${dialog.api_response.content.answers[0].answer}

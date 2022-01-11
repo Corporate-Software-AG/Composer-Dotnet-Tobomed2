@@ -1,0 +1,67 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "EjJpVk",
+    "name": "QnADialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "ekn7AW"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "0kP9QF"
+          },
+          "resultProperty": "dialog.api_response",
+          "method": "POST",
+          "url": "https://coso-qna.cognitiveservices.azure.com/qnamaker/v5.0-preview.2/knowledgebases/78ab5908-4f42-4357-b1d6-57e901763142/generateAnswer",
+          "contentType": "application/json",
+          "responseType": "json",
+          "headers": {
+            "Ocp-Apim-Subscription-Key": "f1f7919249a1419bb2d4d9fadc6b706f"
+          },
+          "body": {
+            "question": "${turn.activity.text}"
+          }
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "QzHQmL"
+          },
+          "condition": "=dialog.api_response.statusCode == 200",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "8xiD6w"
+              },
+              "activity": "${SendActivity_8xiD6w()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "8IHhQB"
+              },
+              "activity": "${SendActivity_8IHhQB()}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "QnADialog.lg",
+  "recognizer": "QnADialog.lu.qna",
+  "id": "QnADialog"
+}

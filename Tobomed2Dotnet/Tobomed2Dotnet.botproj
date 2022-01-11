@@ -5,7 +5,7 @@
     "echoSkillBot": {
       "manifest": "https://raw.githubusercontent.com/tvonment/nodejs-echoskill/main/manifest/js-echoskill-manifest-2.0.json",
       "remote": true,
-      "endpointName": "PROD"
+      "endpointName": "PROD Multi"
     }
   }
 }

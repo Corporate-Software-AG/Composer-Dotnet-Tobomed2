@@ -137,12 +137,12 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "IQMEuO",
-            "comment": "It is recommended to show a message to the user when the bot does not know how to handle an incoming activity and provide follow up options or a help message.\n"
+            "id": "xjTNeT"
           },
-          "activity": "${SendActivity_DidNotUnderstand()}"
+          "activityProcessed": true,
+          "dialog": "QnADialog"
         }
       ]
     },
@@ -174,7 +174,8 @@
           "skillEndpoint": "=settings.skill['echoSkillBot'].endpointUrl",
           "skillAppId": "=settings.skill['echoSkillBot'].msAppId"
         }
-      ]
+      ],
+      "entities": []
     }
   ],
   "generator": "Tobomed2Dotnet.lg",
