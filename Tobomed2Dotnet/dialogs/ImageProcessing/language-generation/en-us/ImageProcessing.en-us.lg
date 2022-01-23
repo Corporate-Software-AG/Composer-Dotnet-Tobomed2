@@ -21,3 +21,10 @@
 
 # SendActivity_u8g7lN_text()
 - Tags: ${dialog.imageTags}
+# SendActivity_ZrAV3X()
+[Activity
+    Text = ${SendActivity_ZrAV3X_text()}
+]
+
+# SendActivity_ZrAV3X_text()
+- flower detected

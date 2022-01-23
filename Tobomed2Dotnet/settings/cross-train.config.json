@@ -13,7 +13,8 @@
       "Help": [
         "HelpDialog.en-us"
       ],
-      "EchoSkill": ""
+      "EchoSkill": "",
+      "CustomVisionSkill": ""
     }
   }
 }

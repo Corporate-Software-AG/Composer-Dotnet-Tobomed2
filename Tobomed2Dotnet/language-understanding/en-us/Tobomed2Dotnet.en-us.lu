@@ -38,3 +38,16 @@
 - echo st back to me
 - can you echoing?
 - i want, that you repeat something
+
+
+# CustomVisionSkill
+> add some example phrases to trigger this intent:
+> - please tell me the weather
+> - what is the weather like in {city=Seattle}
+
+> entity definitions:
+> @ ml city
+- i want to analyze an flower image
+- which flower is on my picture?
+- what flower type is in my image?
+- what flower is that?

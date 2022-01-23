@@ -228,13 +228,6 @@
                   "condition": "=dialog.foreach.value.contentType == \"application/vnd.microsoft.teams.file.download.info\"",
                   "elseActions": [
                     {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "JMsalU"
-                      },
-                      "activity": "${SendActivity_JMsalU()}"
-                    },
-                    {
                       "$kind": "Microsoft.ContinueLoop",
                       "$designer": {
                         "id": "j1OlgT"
@@ -284,6 +277,36 @@
           "$designer": {
             "id": "ipgP5L"
           }
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "vbQoSx",
+        "name": "CustomVisionSkill"
+      },
+      "intent": "CustomVisionSkill",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "T8ZgUv"
+          },
+          "activity": "${SendActivity_T8ZgUv()}"
+        },
+        {
+          "$kind": "Microsoft.BeginSkill",
+          "$designer": {
+            "id": "wG2Qke"
+          },
+          "activityProcessed": true,
+          "botId": "=settings.MicrosoftAppId",
+          "skillHostEndpoint": "=settings.skillHostEndpoint",
+          "allowInterruptions": false,
+          "skillEndpoint": "=settings.skill['customVisionBot'].endpointUrl",
+          "skillAppId": "=settings.skill['customVisionBot'].msAppId",
+          "connectionName": "=settings.connectionName"
         }
       ]
     }

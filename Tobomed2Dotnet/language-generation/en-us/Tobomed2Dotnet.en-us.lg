@@ -33,10 +33,11 @@
 # SendActivity_LosZNT_text()
 - this functionality is only in teams availible
 - please use teams to use this feature
-# SendActivity_JMsalU()
+# SendActivity_T8ZgUv()
 [Activity
-    Text = ${SendActivity_JMsalU_text()}
+    Text = ${SendActivity_T8ZgUv_text()}
 ]
 
-# SendActivity_JMsalU_text()
-- ContentType: ${dialog.foreach.value.contentType}
+# SendActivity_T8ZgUv_text()
+- connect to Custom Vision Skill
+- i will connect you to the external Custom Vision skill

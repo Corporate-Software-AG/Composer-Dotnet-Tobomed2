@@ -81,6 +81,35 @@
                 "id": "u8g7lN"
               },
               "activity": "${SendActivity_u8g7lN()}"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "vUEwtc"
+              },
+              "condition": "=contains(dialog.imageTags, \"flower\")",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "ZrAV3X"
+                  },
+                  "activity": "${SendActivity_ZrAV3X()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginSkill",
+                  "$designer": {
+                    "id": "NyGGX5"
+                  },
+                  "activityProcessed": true,
+                  "botId": "=settings.MicrosoftAppId",
+                  "skillHostEndpoint": "=settings.skillHostEndpoint",
+                  "connectionName": "=settings.connectionName",
+                  "allowInterruptions": false,
+                  "skillEndpoint": "=settings.skill['customVisionBot'].endpointUrl",
+                  "skillAppId": "=settings.skill['customVisionBot'].msAppId"
+                }
+              ]
             }
           ],
           "elseActions": [

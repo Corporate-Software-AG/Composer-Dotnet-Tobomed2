@@ -5,7 +5,12 @@
     "echoSkillBot": {
       "manifest": "https://raw.githubusercontent.com/tvonment/nodejs-echoskill/main/manifest/js-echoskill-manifest-2.0.json",
       "remote": true,
-      "endpointName": "PROD Multi"
+      "endpointName": "PROD"
+    },
+    "customVisionBot": {
+      "manifest": "https://raw.githubusercontent.com/tvonment/nodejs-customvisionskill/main/manifest/js-echoskill-manifest-2.0.json",
+      "remote": true,
+      "endpointName": "PROD"
     }
   }
 }
